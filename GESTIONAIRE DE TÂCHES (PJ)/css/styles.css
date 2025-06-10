@@ -1,0 +1,336 @@
+/* CSS pour le gestionnaire de tâches */
+/* Style simple et élégant avec couleurs d'automne */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f3f0;
+    color: #5d4e37;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #8b4513;
+    color: #f7f3f0;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(139, 69, 19, 0.2);
+    animation: slideDown 0.8s ease-out;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    animation: fadeIn 1s ease-in;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation pour les nouvelles tâches */
+.nouvelle-tache {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+/* Sections */
+section {
+    background-color: #ffffff;
+    margin: 1.5rem 0;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(139, 69, 19, 0.1);
+    border-left: 4px solid #d2691e;
+    animation: fadeIn 1.2s ease-in;
+}
+
+section h2 {
+    color: #8b4513;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Formulaire */
+form {
+    display: grid;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    font-weight: 500;
+    color: #5d4e37;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+input, textarea, select {
+    padding: 0.75rem;
+    border: 2px solid #deb887;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fefefe;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #cd853f;
+    outline: none;
+}
+
+/* Boutons */
+button {
+    background-color: #cd853f;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #b8860b;
+}
+
+button:active {
+    background-color: #a0522d;
+}
+
+/* Filtres */
+#filters {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #faf8f5;
+}
+
+#filters h2 {
+    margin-right: 1rem;
+    margin-bottom: 0;
+}
+
+#filters select {
+    min-width: 150px;
+}
+
+/* Tâches */
+.task {
+    border: 1px solid #deb887;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    background-color: #ffffff;
+    transition: box-shadow 0.2s ease;
+}
+
+.task:hover {
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.15);
+}
+
+.task h3 {
+    margin: 0 0 1rem 0;
+    color: #8b4513;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.task p {
+    margin: 0.5rem 0;
+    color: #5d4e37;
+}
+
+.task-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.task-buttons button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    flex: 1;
+    min-width: 80px;
+}
+
+.complete-btn {
+    background-color: #228b22;
+}
+
+.complete-btn:hover {
+    background-color: #006400;
+}
+
+.edit-btn {
+    background-color: #ff8c00;
+}
+
+.edit-btn:hover {
+    background-color: #ff7f00;
+}
+
+.delete-btn {
+    background-color: #dc143c;
+}
+
+.delete-btn:hover {
+    background-color: #b22222;
+}
+
+/* Priorités */
+.priorite-haute {
+    border-left: 4px solid #dc143c;
+    background-color: #fdf2f2;
+}
+
+.priorite-moyenne {
+    border-left: 4px solid #ff8c00;
+    background-color: #fff8f0;
+}
+
+.priorite-basse {
+    border-left: 4px solid #228b22;
+    background-color: #f0fff0;
+}
+
+/* Statuts */
+.statut-termine {
+    opacity: 0.7;
+    background-color: #f5f5f5;
+}
+
+.statut-en-cours {
+    background-color: #f0f8ff;
+    border-left-color: #4682b4;
+}
+
+/* Message sans tâches */
+.no-tasks {
+    text-align: center;
+    color: #8b4513;
+    font-style: italic;
+    font-size: 1.1rem;
+    padding: 3rem 2rem;
+    background-color: #faf8f5;
+    border-radius: 6px;
+    border: 2px dashed #deb887;
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    main {
+        padding: 0 1rem;
+        margin: 1rem auto;
+    }
+    
+    header {
+        padding: 1.5rem;
+    }
+    
+    header h1 {
+        font-size: 1.75rem;
+    }
+    
+    section {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    #filters {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    #filters h2 {
+        margin-right: 0;
+    }
+    
+    #filters select {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .task-buttons {
+        flex-direction: column;
+    }
+    
+    .task-buttons button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    section {
+        padding: 1rem;
+        margin: 0.75rem 0;
+    }
+    
+    .task {
+        padding: 1rem;
+    }
+    
+    .task h3 {
+        font-size: 1.1rem;
+    }
+    
+    .no-tasks {
+        padding: 2rem 1rem;
+        font-size: 1rem;
+    }
+}

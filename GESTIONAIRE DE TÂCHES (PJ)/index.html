@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestionnaire de Tâches</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Gestionnaire de Tâches</h1>
+  </header>
+
+  <main>
+    <!-- Formulaire d'ajout de tâche -->
+    <section id="form-section">
+      <h2>Ajouter une nouvelle tâche</h2>
+      <form id="task-form">
+        <label for="titre">Titre :</label>
+        <input type="text" id="titre" name="titre" required>
+
+        <label for="description">Description :</label>
+        <textarea id="description" name="description" rows="3"></textarea>
+
+        <label for="date_echeance">Date d'échéance :</label>
+        <input type="date" id="date_echeance" name="date_echeance">
+
+        <label for="priorite">Priorité :</label>
+        <select id="priorite" name="priorite">
+          <option value="basse">Basse</option>
+          <option value="moyenne">Moyenne</option>
+          <option value="haute">Haute</option>
+        </select>
+
+        <button type="submit">Ajouter</button>
+      </form>
+    </section>
+
+    <!-- Filtres -->
+    <section id="filters">
+      <h2>Filtres</h2>
+      <select id="filtre-statut">
+        <option value="tous">Tous</option>
+        <option value="à faire">À faire</option>
+        <option value="en cours">En cours</option>
+        <option value="terminé">Terminé</option>
+      </select>
+
+      <select id="filtre-tri">
+        <option value="date">Trier par date</option>
+        <option value="priorite">Trier par priorité</option>
+      </select>
+    </section>
+
+    <!-- Liste des tâches -->
+    <section id="task-list-section">
+      <h2>Mes Tâches</h2>
+      <div id="task-list">
+        <!-- Les tâches apparaîtront ici dynamiquement -->
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
